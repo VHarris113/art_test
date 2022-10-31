@@ -3,6 +3,10 @@
     --semi-transparent-white: #C4E4F3;
     --drink-color: #ce3333;
     --drink-shadow: #96a6ad;
+    --media-background: #635389;
+    --media-transparent: #292d2f;
+    --media-drink: #004110;
+    --media-shadow: #ffffff;
 }
 
 body {
@@ -79,4 +83,29 @@ body {
     height: 6.25rem;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.05);
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: var(--media-background);
+    }
+    .content {
+        background-color: var(--media-background);
+    }
+    .cup::before {
+        background: linear-gradient(to bottom, var(--media-transparent), var(--media-transparent) 40%, var(--media-drink) 10%);
+    }
+    .cup::after {
+        background-color: var(--media-transparent);
+    }
+    .cup-bottom {
+        background-color: var(--media-drink);
+    }
+    .cup-bottom::before {
+        background: var(--media-drink);
+        border: 0.063rem solid var(--media-shadow);
+    }
+    .cup-shadow {
+        background-color: #ae00ff;
+    }
 }
